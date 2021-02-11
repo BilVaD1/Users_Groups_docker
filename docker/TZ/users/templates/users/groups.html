@@ -1,0 +1,29 @@
+{% extends 'users/layout.html' %}
+
+{% block content_groups %}
+<a href=""><button class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>Add groups</button></a>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        {% for el in groups %}
+        <tbody>
+        <tr class="table-light">
+            <th scope="row">{{ el.id }}</th>
+            <td>{{ el.Name }}</td>
+            <td>{{ el.Description }}</td>
+            <td>
+                <a href="" class="btn btn-success">Edit</a>
+                <a href="" class="btn btn-primary">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}

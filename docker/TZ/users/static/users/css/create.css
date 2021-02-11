@@ -1,0 +1,29 @@
+.form-control {
+    width: 50%;
+    margin: auto;
+}
+
+select {
+    display: inline-block;
+    width: 50%;
+    margin-left: 190px;
+}
+
+form .btn {
+    display: block;
+    width: 25%;
+    margin: auto;
+}
+
+h1 {
+    display: block;
+    margin: 25px;
+    text-align: center;
+}
+
+.features {
+    display: block;
+    width: 75%;
+    margin: auto;
+}
+

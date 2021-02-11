@@ -1,0 +1,60 @@
+{% extends 'users/layout.html' %}
+
+
+{% block content_users %}
+<a href="{% url 'create' %}" class="btn-head"><button class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>Add user</button></a>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Created</th>
+            <th scope="col">Group</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        {% for el in users %}
+        <tbody>
+        <tr class="table-light">
+            <th scope="row">{{ el.id }}</th>
+            <td>{{ el.username }}</td>
+            <td>{{ el.created }}</td>
+            <td>{{ el.group }}</td>
+            <td>
+                <a href="{% url 'users-update' el.id %}" class="btn btn-success">Edit</a>
+                <a href=" {% url 'users-delete' el.id %} " class="btn btn-primary">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block content_groups %}
+<a href="{% url 'create_groups' %}" class="btn-head"><button class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>Add groups</button></a>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        {% for el in groups %}
+        <tbody>
+        <tr class="table-light">
+            <th scope="row">{{ el.id }}</th>
+            <td>{{ el.Name }}</td>
+            <td>{{ el.Description }}</td>
+            <td>
+                <a href="{% url 'groups-update' el.id %}" class="btn btn-success">Edit</a>
+                <a href="{% url 'groups-delete' el.id %}" class="btn btn-primary">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}
